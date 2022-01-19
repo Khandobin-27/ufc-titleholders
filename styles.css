@@ -126,6 +126,12 @@ p {
     }
 }
 
+@media only screen and (max-width: 60em) {
+    .card {
+        aspect-ratio: 1 / 1;
+    }
+}
+
 @media only screen and (max-width: 669px) {
 
     h1 {
@@ -145,20 +151,15 @@ p {
     h1 {
         font-size: 2rem;
     }
-
-    .card {
-        aspect-ratio: 1 / 1.25;
-    }
 }
 
 @media only screen and (max-width: 423px) {
 
     .fighters-grid {
         display: block;
+        width: 250px;
     }
-}
 
-@media only screen and (max-width: 377px) {
     .card:first-child > h2 {
         margin: 1rem 1rem;
     }
@@ -166,6 +167,7 @@ p {
         margin-top: 5.5rem;
     }
     .card {
-        aspect-ratio: 1 / 1.6;
+        margin-bottom: 1.2rem;
+        aspect-ratio: 1 / 1.5;
     }
 }
