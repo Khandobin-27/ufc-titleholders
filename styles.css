@@ -147,16 +147,14 @@ p {
     }
 
     .card {
-        aspect-ratio: 1 / 1.95;
+        aspect-ratio: 1 / 1.25;
     }
 }
 
 @media only screen and (max-width: 423px) {
 
     .fighters-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: .35rem;
+        display: block;
     }
 }
 
@@ -168,6 +166,6 @@ p {
         margin-top: 5.5rem;
     }
     .card {
-        aspect-ratio: 1 / 1.5;
+        aspect-ratio: 1 / 1.6;
     }
 }
