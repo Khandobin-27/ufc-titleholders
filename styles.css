@@ -1,0 +1,173 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 2rem;
+    padding: 2rem;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Anton', sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4rem;
+    text-decoration: underline;
+    text-decoration-color: rgb(165, 16, 16);
+    margin-top: 1rem;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+    max-width: 100rem;
+}
+
+.stacked {
+    display: grid;
+}
+
+.stacked > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.fighters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: .35rem;
+}
+/*aspect-ration is the ration between width and height, where 1 / 1 means they are equal both horiz and vert*/
+.card {
+    aspect-ratio: 1 / 1.3;
+    box-shadow: 5px -4px 18px 2px rgba(212,210,212,1)
+}
+
+.card-content {
+    background: white;
+    align-self: end;
+    margin: .5rem 1.2rem 2rem;
+    padding: .5rem;
+    box-shadow: 0 .25rem 1rem rgb(0 0 0 / .1);
+}
+
+
+.fighter-title {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    color: rgb(100, 22, 22);
+    margin: 0;
+}
+
+.card-name {
+    font-size: 1.3rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin: 0;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.card-img {
+    /* aspect-ratio: 1 / 1; */
+    object-fit: cover;
+    margin-top: 4rem;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width: 60em) {
+    .card:first-child > .card-img {
+        margin-top: 5.7rem;
+    }
+    .card:first-child > h2 {
+        font-size: 2.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-img {
+        aspect-ratio: 1 / 1;
+    }
+
+    /*Different approach can be applied to select the class featured
+        Below one of hte examples 
+        it can also be done following ways:
+        1) .featured
+        2) .card--featured
+        3) .card[data-featured='true']
+    */
+    .card.featured {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+    /*Choosing the image in the featurred card*/
+    .card.featured .card-img {
+        width: 100%;
+    }
+    
+    .first-title {
+        font-size: 2.75rem;
+    }
+}
+
+@media only screen and (max-width: 669px) {
+
+    h1 {
+        font-size: 3rem;
+    }    
+
+    .card-img {
+        width: 100%;
+    }
+    .card {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        aspect-ratio: 1 / 1.25;
+    }
+}
+
+@media only screen and (max-width: 423px) {
+
+    .fighters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: .35rem;
+    }
+}
+
+@media only screen and (max-width: 377px) {
+    .card:first-child > h2 {
+        margin: 1rem 1rem;
+    }
+    .card:first-child > .card-img {
+        margin-top: 5.5rem;
+    }
+    .card {
+        aspect-ratio: 1 / 1.5;
+    }
+}
